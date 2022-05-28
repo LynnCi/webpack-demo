@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  mode:'development',//默认 production,打包后会压缩
+  mode:'development',//默认production,打包后会压缩；dev环境不会压缩
   entry:'./src/index.js',
   module:{
     rules:[{
@@ -14,6 +14,20 @@ module.exports = {
           limit:2048, //图片小于2kb,打包成base64；否则打包成图片文件；
         }
       }
+    },{
+      test:/\.scss$/,
+      use:[
+        'style-loader',
+        {
+          loader:'css-loader',
+          options:{
+            importLoaders:2,
+            modules:true, //开启css 模块化打包
+          }
+        },
+        'sass-loader',
+        'postcss-loader'
+      ]
     }]
   },
   output:{

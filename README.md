@@ -19,7 +19,13 @@
 > 什么是 loader？  
 > webpack 无法识别非 js 结尾的模块，通过 loader 转化识别；
 
+> loader 执行顺序：从下往上，从右到左。
+
 > [file-loader](https://v4.webpack.js.org/loaders/file-loader/) 和 [url-loader](https://v4.webpack.js.org/loaders/url-loader/) 异同点？  
 > url-loader 打包图片时，会把图片转换成 base64 格式，且把 base64 放到打包后的 js 文件中；适合小图片；
 
 > [vue-loader](https://vue-loader.vuejs.org/zh/)
+
+> [scss-loader](https://v4.webpack.js.org/loaders/sass-loader/)  
+> [css-loader]() 分析各个 css 文件间关系，合并成一个 css；  
+> [style-loader]() 拿到 css 合并文件后，把它挂在到 head 中；

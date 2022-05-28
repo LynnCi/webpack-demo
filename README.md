@@ -38,4 +38,4 @@
 > [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/#root)
 > 会在打包结束后，自动生成一个 html 文件，并把打包生成的 js 自动引入到这个 html 文件中。
 
-> [clean-webpack-plugin]()帮助删除 dist 目录，再打包。(第三方)
+> [clean-webpack-plugin]() 帮助 先删除已经打包文件，再重新生成新的打包文件。

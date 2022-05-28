@@ -1,10 +1,13 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 module.exports = {
   mode:'development',//默认production,打包后会压缩；dev环境不会压缩
-  entry:'./src/index.js',
+  entry:{
+    main:'./src/index.js',
+    sub:'./src/index.js',
+  },
   module:{
     rules:[{
       test:/\.(jpg|png|jpeg|gif)$/,
@@ -41,10 +44,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       template:'src/index.html'
     }),
-    new CleanWebpackPlugin(['dist']),
-],
+    new CleanWebpackPlugin()
+  ],
   output:{
-    filename:'bundle.js', //打包后文件名为 bundle.js
+    publicPath:'http://cdn.com.cn/', //生成的 js 加地址
+    filename:'[name].js', //打包后文件名为 entry 设置名称
     path:path.resolve(__dirname,'dist') //打包后文件放入 dist 文件夹
   }
 }

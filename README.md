@@ -28,4 +28,5 @@
 
 > [scss-loader](https://v4.webpack.js.org/loaders/sass-loader/)  
 > [css-loader]() 分析各个 css 文件间关系，合并成一个 css；  
-> [style-loader]() 拿到 css 合并文件后，把它挂在到 head 中；
+> [style-loader]() 拿到 css 合并文件后，把它挂载到 head 中；  
+> css 打包的模块化？ css 只在当前内容生效。

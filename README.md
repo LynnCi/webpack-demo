@@ -30,3 +30,12 @@
 > [css-loader]() 分析各个 css 文件间关系，合并成一个 css；  
 > [style-loader]() 拿到 css 合并文件后，把它挂载到 head 中；  
 > css 打包的模块化？ css 只在当前内容生效。
+
+## Plugin
+
+#### plugin 作用：帮助 webpack 打包。
+
+> [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/#root)
+> 会在打包结束后，自动生成一个 html 文件，并把打包生成的 js 自动引入到这个 html 文件中。
+
+> [clean-webpack-plugin]()帮助删除 dist 目录，再打包。(第三方)

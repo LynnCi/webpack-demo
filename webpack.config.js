@@ -1,4 +1,6 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
   mode:'development',//默认production,打包后会压缩；dev环境不会压缩
@@ -35,6 +37,12 @@ module.exports = {
       ]
     }]
   },
+  plugins:[
+    new HtmlWebpackPlugin({
+      template:'src/index.html'
+    }),
+    new CleanWebpackPlugin(['dist']),
+],
   output:{
     filename:'bundle.js', //打包后文件名为 bundle.js
     path:path.resolve(__dirname,'dist') //打包后文件放入 dist 文件夹

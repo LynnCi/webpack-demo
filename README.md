@@ -16,8 +16,7 @@
 
 ## Loader
 
-> 什么是 loader？  
-> webpack 无法识别非 js 结尾的模块，通过 loader 转化识别；
+因为 Webpack 无法识别非 js 结尾的模块，通过 loader 转化识别。
 
 > loader 执行顺序：从下往上，从右到左。
 
@@ -33,7 +32,7 @@
 
 ## Plugin
 
-#### plugin 作用：帮助 webpack 打包。
+#### 帮助 webpack 打包。
 
 > [HtmlWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/#root)
 > 会在打包结束后，自动生成一个 html 文件，并把打包生成的 js 自动引入到这个 html 文件中。
@@ -52,3 +51,11 @@
 - cheap-inline-source-map 精确到行，业务代码
 - cheap-module-inline-source-map 业务代码 + 第三方模块
 - eval 打包速度最快、性能最好，不适合复杂代码场景
+
+## WebpackDevSever
+
+#### 提升开发效率
+
+## "middleware":"node server.js"
+
+#### 运行 middleware，自己写一个服务器

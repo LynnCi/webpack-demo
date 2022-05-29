@@ -8,6 +8,11 @@ module.exports = {
   entry:{
     main:'./src/index.js',
   },
+  devServer:{
+    contentBase:'./dist',
+    open:true,//自动打开浏览器
+    port:8080
+  },
   module:{
     rules:[{
       test:/\.(jpg|png|jpeg|gif)$/,
@@ -47,7 +52,8 @@ module.exports = {
     new CleanWebpackPlugin()
   ],
   output:{
+    publicPath:'/',
     filename:'[name].js', //打包后文件名为 entry 设置名称
-    path:path.resolve(__dirname,'dist') //打包后文件放入 dist 文件夹
+    path:path.resolve(__dirname,'dist'), //打包后文件放入 dist 文件夹
   }
 }

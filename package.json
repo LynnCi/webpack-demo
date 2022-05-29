@@ -8,6 +8,7 @@
     "autoprefixer": "^8.0.0",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^1.0.1",
+    "express": "^4.16.4",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.1.0",
     "node-sass": "^4.14.0",
@@ -16,10 +17,14 @@
     "style-loader": "^0.23.1",
     "url-loader": "^4.1.1",
     "webpack": "^4.16.5",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-middleware": "^3.4.0",
+    "webpack-dev-server": "^3.11.1"
   },
   "scripts": {
-    "bundle": "webpack"
+    "watch": "webpack --watch",
+    "start": "webpack-dev-server",
+    "server": "node server.js"
   },
   "keywords": [],
   "author": "",

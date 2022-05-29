@@ -4,9 +4,9 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 
 module.exports = {
   mode:'development',//默认production,打包后会压缩；dev环境不会压缩
+  devtool:'cheap-module-eval-source-map',
   entry:{
     main:'./src/index.js',
-    sub:'./src/index.js',
   },
   module:{
     rules:[{
@@ -47,7 +47,6 @@ module.exports = {
     new CleanWebpackPlugin()
   ],
   output:{
-    publicPath:'http://cdn.com.cn/', //生成的 js 加地址
     filename:'[name].js', //打包后文件名为 entry 设置名称
     path:path.resolve(__dirname,'dist') //打包后文件放入 dist 文件夹
   }

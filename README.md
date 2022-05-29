@@ -39,3 +39,16 @@
 > 会在打包结束后，自动生成一个 html 文件，并把打包生成的 js 自动引入到这个 html 文件中。
 
 > [clean-webpack-plugin]() 帮助 先删除已经打包文件，再重新生成新的打包文件。
+
+## SourceMap
+
+它是一个映射关系，源代码和产出代码的对应关系。
+
+#### devtool 配置
+
+- [cheap-module-eval-source-map](https://webpack.js.org/configuration/devtool/) dev 环境
+- [cheap-module-source-map](https://webpack.js.org/configuration/devtool/) prod 环境。一般线上不使用映射关系
+- inline-source-map 精确到行、列，耗费性能
+- cheap-inline-source-map 精确到行，业务代码
+- cheap-module-inline-source-map 业务代码 + 第三方模块
+- eval 打包速度最快、性能最好，不适合复杂代码场景

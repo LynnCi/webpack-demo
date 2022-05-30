@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const webpack = require('webpack')
 
 module.exports = {
   mode:'development',//默认production,打包后会压缩；dev环境不会压缩
@@ -11,7 +12,9 @@ module.exports = {
   devServer:{
     contentBase:'./dist',
     open:true,//自动打开浏览器
-    port:8080
+    port:8080,
+    hot:true, 
+    hotOnly:true //功能没有生效，浏览器不自动刷新
   },
   module:{
     rules:[{
@@ -43,13 +46,22 @@ module.exports = {
         'sass-loader',
         'postcss-loader'
       ]
+    },{
+      test:/\.css$/,
+      use:[
+        'style-loader',
+        'css-loader',
+        'postcss-loader'
+      ]
     }]
   },
   plugins:[
     new HtmlWebpackPlugin({
       template:'src/index.html'
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin()
+
   ],
   output:{
     publicPath:'/',

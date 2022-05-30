@@ -56,6 +56,12 @@
 
 #### 提升开发效率
 
+#### 打包生成的目录放到电脑内存中，不在项目目录中。
+
 ## "middleware":"node server.js"
 
 #### 运行 middleware，自己写一个服务器
+
+## Hot Module Replacement
+
+- 代码更新，自动刷新页面

@@ -65,3 +65,12 @@
 ## Hot Module Replacement
 
 - 代码更新，自动刷新页面
+
+## 打包命令
+
+- npx webpack 生成 dist 打包文件
+- npm run start 打包生成的命令在内存中
+
+## babel-loader
+
+#### 作为 webpack 和 babel 的桥梁，需要借助其他插件把 es6 转义成 es5。

@@ -18,6 +18,20 @@ module.exports = {
   },
   module:{
     rules:[{
+      test: /\.m?js$/,
+      exclude: /node_modules/,//babel-loader 不对该文件生效
+      use: {
+        loader: "babel-loader",
+        options: {
+          presets: [['@babel/preset-env',{
+            targets:{
+              chrome:'67'
+            },
+            useBuiltIns:'usage'
+          }]] //包含 es6 转 es5 的转义规则。
+        }
+      }
+    },{
       test:/\.(jpg|png|jpeg|gif)$/,
       use:{
         loader:'url-loader',

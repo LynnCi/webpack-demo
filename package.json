@@ -3,9 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1"
+  },
   "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
     "autoprefixer": "^8.0.0",
+    "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^1.0.1",
     "express": "^4.16.4",

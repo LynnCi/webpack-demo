@@ -74,11 +74,15 @@
 # Babel
 
 - babel-loader
-作为 webpack 和 babel 的桥梁，需要借助其他插件把 es6 转义成 es5。
+  作为 webpack 和 babel 的桥梁，需要借助其他插件把 es6 转义成 es5。
 
 - @babel/polyfill 补丁库
-缺点:污染全局环境，因为全局注入变量、方法等。所以不能用他打包组件库、类库。
+  缺点:污染全局环境，因为全局注入变量、方法等。所以不能用他打包组件库、类库。
 
 - @babel/plugin-transform-runtime
-用闭包、或间接方式引入组件内容。不会污染全局。
+  用闭包、或间接方式引入组件内容。不会污染全局。
 
+## [Tree Shaking](https://webpack.js.org/guides/tree-shaking/)
+
+移除 js 中上下文未使用的代码块。  
+只支持 ES Module 方式引入。

@@ -4,8 +4,8 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const webpack = require('webpack')
 
 module.exports = {
-  mode:'development',//默认production,打包后会压缩；dev环境不会压缩
-  devtool:'cheap-module-eval-source-map',
+  mode:'production',//默认production,打包后会压缩；dev环境不会压缩
+  devtool:'cheap-module-source-map',
   entry:{
     main:'./src/index.js',
   },
@@ -90,9 +90,9 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
 
   ],
-  optimization:{ //dev 环境使用tree shaking 加此属性
-    usedExports:true
-  },
+  // optimization:{ //dev 环境使用tree shaking 加此属性
+  //   usedExports:true
+  // },
   output:{
     publicPath:'./',
     filename:'[name].js', //打包后文件名为 entry 设置名称

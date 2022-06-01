@@ -90,8 +90,11 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin()
 
   ],
+  optimization:{ //dev 环境使用tree shaking 加此属性
+    usedExports:true
+  },
   output:{
-    publicPath:'/',
+    publicPath:'./',
     filename:'[name].js', //打包后文件名为 entry 设置名称
     path:path.resolve(__dirname,'dist'), //打包后文件放入 dist 文件夹
   }

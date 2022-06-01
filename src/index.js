@@ -1,4 +1,4 @@
-// import "@babel/polyfill";
+// import "@babel/polyfill"; //业务代码
 
 const arr = [
   new Promise(() => {}),
